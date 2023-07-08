@@ -1,3 +1,5 @@
+package units;
+
 import java.util.Random;
 
 public enum NamesHeros {

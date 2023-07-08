@@ -1,3 +1,7 @@
+package units;
+
+import java.util.ArrayList;
+
 public abstract class BasicHero implements Actions {
     int id;
     int healthLevel;
@@ -18,4 +22,19 @@ public abstract class BasicHero implements Actions {
         place = new Position(x,y);
     }
 
+    protected int[] findNearEnemy (ArrayList<BasicHero> enemins){
+        double min = 1000;
+        int count = 0;
+        for (int i =0 ; i< enemins.size(); i++){
+            if (place.calcDistance(enemins.get(i).place)<min) {
+                min= place.calcDistance(enemins.get(i).place);
+                count=i;
+            }
+        }
+        return new int []{(int) Math.round(min), count};
+    }
+
+    public void step(){
+
+    };
 }
