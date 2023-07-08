@@ -1,4 +1,4 @@
-public abstract class BasicHero {
+public abstract class BasicHero implements Actions {
     int id;
     int healthLevel;
     String name ;
@@ -10,8 +10,9 @@ public abstract class BasicHero {
         this.id = id;
         this.healthLevel = healthLevel;
         this.name = name;
-        this.type = "type";
+        this.type = type;
         this.attackBasic = attackBasic;
         this.initiativa = initiativa;
     }
+
 }

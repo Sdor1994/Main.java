@@ -4,4 +4,13 @@ public abstract class Shooters extends BasicHero{
         this.distantAttack = distantAttack ;
     }
     int distantAttack;
+    @Override
+    public void step() {
+
+    }
+    @Override
+    public String getInfo(){
+        return ("Name: "+ name + ", Type:"+ type+ ", ID: "+ id+ ",Health:"+ healthLevel+", Initiative:"+initiativa
+                + " distantAttack: "+distantAttack);
+    }
 }
