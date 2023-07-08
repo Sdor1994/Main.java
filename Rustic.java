@@ -1,7 +1,8 @@
 public class Rustic extends BasicHero{
 
-    public Rustic(String name) {
-        super(6, 100, name, "Rustic", 0,2);
+    public Rustic(String name, int x, int y) {
+
+        super(6, 100, name, "Rustic", 0,2, x, y);
     }
 
     @Override
