@@ -18,9 +18,8 @@ public class Rustic extends BasicHero{
     }
 
     @Override
-    public void step(ArrayList<BasicHero> enemies) {
-        int[] tmp = findNearEnemy(enemies);
-        System.out.println("Ln= "+tmp[0] + " Oposition name: "+ enemies.get(tmp[1]).name);
+    public void step(ArrayList<BasicHero> enemies, ArrayList<BasicHero> aliance) {
+        BasicHero tmp = findNearEnemy(enemies);
     }
 
 }

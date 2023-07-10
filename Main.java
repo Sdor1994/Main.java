@@ -1,6 +1,7 @@
 import units.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Main {
@@ -27,6 +28,12 @@ public class Main {
 
 
         }
+
+        ArrayList<BasicHero> unitedTeam = new ArrayList<>();
+        unitedTeam.addAll(aliance);
+        unitedTeam.addAll(empire);
+        unitedTeam.sort((o1, o2) -> o2.getInitiativa() - o1.getInitiativa());
+
         System.out.println("Команда 1:");
         aliance.forEach(i-> System.out.println(i.getInfo()));
         System.out.println();
@@ -36,10 +43,19 @@ public class Main {
         System.out.println();
         System.out.println();
 
-        System.out.println("Враги альянса: ");
-        aliance.forEach(n-> n.step(empire));
-        System.out.println();
-        System.out.println("Враги империи: ");
-        empire.forEach(n->n.step(aliance));
+        for (BasicHero item : unitedTeam){
+            if (empire.contains(item)) {
+                item.step(aliance,empire);
+            } else {
+                item.step(empire,aliance);
+            }
+            System.out.println(item.getInitiativa());
+        }
+
+        aliance.forEach(i-> System.out.println(i.getInfo()));
+        System.out.println("_".repeat(40));
+        empire.forEach(i-> System.out.println(i.getInfo()));
+
+
     }
 }

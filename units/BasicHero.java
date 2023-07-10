@@ -6,11 +6,15 @@ public abstract class BasicHero implements Actions {
     int id;
     int healthLevel;
     String name ;
-    String type;
+    protected String type;
     int attackBasic;
-    int initiativa;
+    protected int initiativa;
 
     protected Position place;
+
+    public int getInitiativa() {
+        return initiativa;
+    }
 
     public BasicHero(int id, int healthLevel, String name, String  type, int attackBasic, int initiativa, int x, int y) {
         this.id = id;
@@ -22,7 +26,7 @@ public abstract class BasicHero implements Actions {
         place = new Position(x,y);
     }
 
-    protected int[] findNearEnemy (ArrayList<BasicHero> enemins){
+    protected BasicHero findNearEnemy (ArrayList<BasicHero> enemins){
         double min = 1000;
         int count = 0;
         for (int i =0 ; i< enemins.size(); i++){
@@ -31,7 +35,7 @@ public abstract class BasicHero implements Actions {
                 count=i;
             }
         }
-        return new int []{(int) Math.round(min), count};
+        return enemins.get(count);
     }
 
     public void step(){

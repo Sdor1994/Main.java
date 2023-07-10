@@ -7,10 +7,9 @@ public abstract class Infantry extends BasicHero {
         super(id, healthLevel, name, type, attackBasic, initiativa,x ,y );
     }
 
-    @Override
+
     public void step(ArrayList<BasicHero> enemies) {
-        int[] tmp = findNearEnemy(enemies);
-        System.out.println("Ln= "+tmp[0] + " Oposition name: "+ enemies.get(tmp[1]).name);
+
     }
 
     @Override
