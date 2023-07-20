@@ -20,14 +20,17 @@ public abstract class Shooters extends BasicHero{
         tmp.healthLevel = tmp.healthLevel -  this.attackBasic;
 
         for (BasicHero item: ours){
-            if (item.type.contains("Rustic")) return;
+            if (item.type.contains("Rustic") && !((Rustic)(item)).busy && item.healthLevel>0){
+                ((Rustic)(item)).busy= true;
+
+                return;
+            }
         }
         this.shoots --;
     }
 
     @Override
     public String getInfo(){
-        return ("Name: "+ name + ", Type:"+ type+ ", ID: "+ id+ ",Health:"+ healthLevel+", Initiative:"+initiativa
-                + " distantAttack: "+distantAttack +" Shoots: "+shoots+" units.Position: "+ place.positionX +","+ place.positionY);
+        return (name + ", "+ type+" ♡ :"+ healthLevel + " Shoots: "+shoots);
     }
 }

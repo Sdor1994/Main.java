@@ -1,8 +1,8 @@
 package units;
 
 public class Position {
-    int positionX;
-    int positionY;
+    public int positionX;
+    public int positionY;
 
 
     public Position(int positionX, int positionY) {

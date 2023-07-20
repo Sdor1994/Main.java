@@ -25,6 +25,13 @@ public abstract class BasicHero implements Actions {
         this.initiativa = initiativa;
         place = new Position(x,y);
     }
+    public Position getPlace(){
+        return place;
+    }
+
+    public int getHealthLevel(){
+        return healthLevel;
+    }
 
     protected BasicHero findNearEnemy (ArrayList<BasicHero> enemins){
         double min = 1000;
@@ -36,6 +43,11 @@ public abstract class BasicHero implements Actions {
             }
         }
         return enemins.get(count);
+    }
+
+    @Override
+    public String toString() {
+        return super.getClass().getSimpleName();
     }
 
     public void step(){
