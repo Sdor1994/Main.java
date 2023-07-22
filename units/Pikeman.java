@@ -7,8 +7,5 @@ public class Pikeman extends Infantry{
         super(3, 100, name, "Pikeman", 6, 7, x, y);
     }
 
-    @Override
-    public void step(ArrayList<BasicHero> enemins, ArrayList<BasicHero> aliance) {
 
-    }
 }

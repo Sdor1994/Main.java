@@ -12,15 +12,16 @@ public abstract class Wizard extends BasicHero {
 
     public void step(ArrayList<BasicHero> enemies,ArrayList<BasicHero> ours) {
         if (this.healthLevel > 0 ) {
+            BasicHero tmp = findNearEnemy(enemies);
             for (BasicHero item : ours){
-                if (item.healthLevel<99){
+                if (item.healthLevel<99 & item.healthLevel >0 ){
                     item.healthLevel += this.heal;
                     return;
-                } else { findNearEnemy(enemies).healthLevel -= (this.heal*2);
+                } else tmp.getDamage(this.attackBasic);
                 }
             }
         }
-    }
+
     @Override
     public String getInfo(){
         return (name + ", "+ type + " ♡ :"+ healthLevel+" heal: "+heal );

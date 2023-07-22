@@ -7,8 +7,4 @@ public class Robber extends Infantry {
         super(2, 100, name, "Robber", 5, 8, x, y);
     }
 
-    @Override
-    public void step(ArrayList<BasicHero> enemins, ArrayList<BasicHero> aliance) {
-
-    }
 }

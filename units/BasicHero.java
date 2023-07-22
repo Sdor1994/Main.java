@@ -33,11 +33,16 @@ public abstract class BasicHero implements Actions {
         return healthLevel;
     }
 
+    public void getDamage (float damage){
+        this.healthLevel -= damage;
+        if (healthLevel <0) healthLevel =0;
+        return ;
+    }
     protected BasicHero findNearEnemy (ArrayList<BasicHero> enemins){
         double min = 1000;
         int count = 0;
         for (int i =0 ; i< enemins.size(); i++){
-            if (place.calcDistance(enemins.get(i).place)<min) {
+            if (place.calcDistance(enemins.get(i).place)<min & enemins.get(i).healthLevel > 0) {
                 min= place.calcDistance(enemins.get(i).place);
                 count=i;
             }

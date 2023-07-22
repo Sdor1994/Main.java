@@ -17,7 +17,7 @@ public abstract class Shooters extends BasicHero{
         if (this.healthLevel <=0 || this.shoots == 0) return;
 
         BasicHero tmp = findNearEnemy(enemies);
-        tmp.healthLevel = tmp.healthLevel -  this.attackBasic;
+        tmp.getDamage(this.attackBasic);
 
         for (BasicHero item: ours){
             if (item.type.contains("Rustic") && !((Rustic)(item)).busy && item.healthLevel>0){
