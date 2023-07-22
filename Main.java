@@ -43,9 +43,9 @@ public class Main {
                     empire.add(new Rustic(NamesHeros.getName(), 10, i));
 
             }
-
-
         }
+
+
         Scanner scan = new Scanner(System.in);
 
         unitedTeam.addAll(aliance);
